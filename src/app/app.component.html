@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<body style="background-color: cadetblue;">
+  <select name="cars" id="sortBy">
+  <option value="todayCases">todayCases</option>
+  <option value="deaths">deaths</option>
+ <option value="todayDeaths">todayDeaths</option>
+ <option value="recovered">recovered</option>
+ <option value="todayRecovered">todayRecovered</option>
+ <option value="active">active</option>
+ <option value="critical">critical</option>
+ <option value="casePerOneMillion">casePerOneMillion</option>
+ <option value="deathsPerOneMillion">deathsPerOneMillion</option>
+ <option value="tests">tests</option>
+ <option value="testsPerOneMillion">testsPerOneMillion</option>
+ <option value="testsPerOneMillion">testsPerOneMillion</option>
+ <option value="population">population</option>
+ <option value="oneCasePerPeople">oneCasePerPeople</option>
+ <option value="oneDeathPerPeople">oneDeathPerPeople</option>
+ <option value="oneTestPerPeople">oneTestPerPeople</option>
+  <option value="activePerOneMillion">activePerOneMillion</option>
+  <option value="recoveredPerOneMillion">recoveredPerOneMillion</option>
+  <option value="criticalPerOneMillion">criticalPerOneMillion</option>
+</select>
+<button type="submit" (click)="sortData()">Submit</button>
+<div class="container mt-5">
+  <div class="card" style="text-align: center;">
+    <h1 style="background-image: linear-gradient(rgb(3, 3, 66) ,rgb(168, 81, 81) ) ; color: aliceblue;">COVID-19 TRACKER</h1>
+  </div>
+  <div class="card" id="mycard" style="padding: 5px;">
+    <div class="row">
+      <div class="col-lg-4 "   *ngFor="let d of data;">
+        <div class="card mt-3" id="hello" style="padding: 5px;">
+        <img [src]="d.countryInfo.flag" class="img-thumbnail" >
+         CountryFlag: {{d.flag}}<br>
+         Country: {{d.country}}<br>
+         Cases: {{d.cases}}<br>
+         Active Cases: {{d.active}}<br>
+         Recovered: {{d.recovered}}<br>
+         Today Cases: {{d.todayCases}}<br>
+         Deaths: {{d.deaths}}<br>
+         TodayDeaths: {{d.todayDeaths}} <br>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
